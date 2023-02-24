@@ -70,6 +70,16 @@ export default defineUserConfig({
               content: content.substring(6)
             }
           }
+        },
+        {
+          matcher: /@TODO/,
+          replacer: ({ tag }) => {
+            if (tag === 'em') return {
+              tag: 'Badge',
+              attrs: { type: 'danger' },
+              content: 'TODO'
+            }
+          }
         }
       ]
     }, false),
