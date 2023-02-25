@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-d5fe0c96","path":"/design-pattern/","title":"设计模式","lang":"zh-CN","frontmatter":{"title":"设计模式","description":"设计模式"},"headers":[],"git":{"updatedTime":1677340265000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":1}]},"filePathRelative":"design-pattern/index.md","excerpt":""}');export{e as data};
