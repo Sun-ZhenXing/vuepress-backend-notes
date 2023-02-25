@@ -1,4 +1,4 @@
-# C++ 笔记
+# 后端笔记
 
 ![](https://img.shields.io/github/actions/workflow/status/Sun-ZhenXing/vuepress-backend-notes/deploy-docs.yml?branch=main)
 
