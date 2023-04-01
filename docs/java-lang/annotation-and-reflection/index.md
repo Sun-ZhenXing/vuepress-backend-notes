@@ -1,8 +1,3 @@
----
-title: Java 注解和反射
-description: Java 注解和反射
----
-
 # Java 注解和反射
 
 本文是 [*狂神说 Java：注解和反射*](https://www.bilibili.com/video/BV1p4411P7V3) 的学习笔记。

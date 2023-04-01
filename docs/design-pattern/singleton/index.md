@@ -1,8 +1,3 @@
----
-title: 单例模式
-description: 单例模式
----
-
 # 单例模式
 
 [[TOC]]

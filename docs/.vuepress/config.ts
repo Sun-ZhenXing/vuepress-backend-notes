@@ -62,12 +62,32 @@ export default defineUserConfig({
           }
         },
         {
-          matcher: /@note:.+/,
-          replacer: ({ tag, content }) => {
+          matcher: /@note/,
+          replacer: ({ tag }) => {
             if (tag === 'em') return {
-              tag: 'Badge',
-              attrs: { type: 'warning' },
-              content: content.substring(6)
+              tag: 'span',
+              attrs: { style: 'color: var(--c-warning)' },
+              content: '说明：'
+            }
+          }
+        },
+        {
+          matcher: /@positive/,
+          replacer: ({ tag }) => {
+            if (tag === 'em') return {
+              tag: 'span',
+              attrs: { style: 'color: var(--c-tip)' },
+              content: '正例：'
+            }
+          }
+        },
+        {
+          matcher: /@negative/,
+          replacer: ({ tag }) => {
+            if (tag === 'em') return {
+              tag: 'span',
+              attrs: { style: 'color: var(--c-danger)' },
+              content: '反例：'
             }
           }
         },
@@ -80,11 +100,50 @@ export default defineUserConfig({
               content: 'TODO'
             }
           }
+        },
+        {
+          matcher: /@force/,
+          replacer: ({ tag }) => {
+            if (tag === 'em') return {
+              tag: 'span',
+              attrs: { style: 'color: var(--c-danger)' },
+              content: '【强制】'
+            }
+          }
+        },
+        {
+          matcher: /@recommend/,
+          replacer: ({ tag }) => {
+            if (tag === 'em') return {
+              tag: 'span',
+              attrs: { style: 'color: var(--c-warning)' },
+              content: '【推荐】'
+            }
+          }
+        },
+        {
+          matcher: /@ref/,
+          replacer: ({ tag }) => {
+            if (tag === 'em') return {
+              tag: 'span',
+              attrs: { style: 'color: var(--c-tip)' },
+              content: '【参考】'
+            }
+          }
         }
       ]
     }, false),
     searchProPlugin({}),
-    autoCatalogPlugin({}),
+    autoCatalogPlugin({
+      orderGetter: ({ title, routeMeta }) => {
+        if (routeMeta.order) return routeMeta.order as number
+        const prefix = title.match(/^\d+. /)
+        if (prefix) return parseInt(prefix[0])
+        const suffix = title.match(/\d+$/)
+        if (suffix) return parseInt(suffix[0])
+        return 0
+      }
+    }),
     copyCodePlugin({
       showInMobile: true
     })

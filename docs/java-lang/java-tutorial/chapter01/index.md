@@ -1,8 +1,3 @@
----
-title: 第 1 章：Java 语言概述
-description: 第 1 章：Java 语言概述
----
-
 # 1. Java 语言概述
 
 [[TOC]]

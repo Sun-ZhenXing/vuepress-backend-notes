@@ -1,8 +1,3 @@
----
-title: 第 2 章：Java 基础语法
-description: 第 2 章：Java 基础语法
----
-
 # 2. Java 基础语法
 
 ## 2.1 Java 标识符
