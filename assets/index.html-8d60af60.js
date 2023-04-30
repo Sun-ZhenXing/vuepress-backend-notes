@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-6bc2dffc","path":"/tools/nginx/","title":"Nginx","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1682841391000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":1}]},"filePathRelative":"tools/nginx/index.md","excerpt":""}');export{t as data};
