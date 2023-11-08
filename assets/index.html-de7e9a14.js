@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-8ab2e35a","path":"/cloud/oss/","title":"阿里云 OSS","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1699426009000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":1}]},"filePathRelative":"cloud/oss/index.md","excerpt":""}');export{e as data};
