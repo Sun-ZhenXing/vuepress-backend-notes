@@ -1,1 +1,0 @@
-import{_ as a,M as n,p as o,q as c,N as r,R as e,t as s}from"./framework-5f7e94ef.js";const _={},d=e("h1",{id:"nginx",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#nginx","aria-hidden":"true"},"#"),s(" Nginx")],-1);function i(l,x){const t=n("AutoCatalog");return o(),c("div",null,[d,r(t)])}const f=a(_,[["render",i],["__file","index.html.vue"]]);export{f as default};

@@ -1,1 +1,0 @@
-import{_ as t,M as o,p as n,q as c,N as r,R as e,t as s}from"./framework-5f7e94ef.js";const _={},d=e("h1",{id:"java-教程",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#java-教程","aria-hidden":"true"},"#"),s(" Java 教程")],-1);function l(i,h){const a=o("AutoCatalog");return n(),c("div",null,[d,r(a)])}const m=t(_,[["render",l],["__file","index.html.vue"]]);export{m as default};
