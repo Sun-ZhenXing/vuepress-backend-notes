@@ -4,6 +4,10 @@
 
 ## 1. 常见 MIME 类型
 
+可通过 MDN 查看 [常见的 MIME 类型](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)[^1]。
+
+[^1]: MDN，Common MIME types，<https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types>
+
 | 文件扩展名       | MIME 类型                      | 描述            |
 | ---------------- | ------------------------------ | --------------- |
 | `.html` / `.htm` | `text/html`                    | HTML 文档       |

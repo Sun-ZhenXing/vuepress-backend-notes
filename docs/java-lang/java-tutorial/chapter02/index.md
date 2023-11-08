@@ -4,9 +4,7 @@
 
 Java 有哪些关键字？
 
-*@TODO*
-
-<!-- https://www.runoob.com/java/java-basic-syntax.html -->
+*@TODO* <!-- https://www.runoob.com/java/java-basic-syntax.html -->
 
 Java 标识符的要求：
 
@@ -22,27 +20,27 @@ Java 是强类型语言：要求变量的使用要严格符合规定，所有的
 Java 的数据分为两大类：
 
 - **基本类型**（Primitive Type）
-    - 数值类型
-        - 整数类型
-            - `byte`，1 个字节
-            - `short`，2 个字节
-            - `int`，4 个字节
-            - `long`，8 个字节
-        - 浮点类型
-            - `float`，4 个字节
-            - `double`，8 个字节
-        - 字符类型
-            - `char`，2 个字节
-    - 布尔类型
-        - `boolean` 类型，占 1 位
+  - 数值类型
+    - 整数类型
+      - `byte`，1 个字节
+      - `short`，2 个字节
+      - `int`，4 个字节
+      - `long`，8 个字节
+    - 浮点类型
+      - `float`，4 个字节
+      - `double`，8 个字节
+    - 字符类型
+      - `char`，2 个字节
+  - 布尔类型
+    - `boolean` 类型，占 1 位
 - **引用类型**（Reference Type）
-    - 类
-    - 接口
-    - 数组
+  - 类
+  - 接口
+  - 数组
 
 ## 2.3 类型转换
 
-*@TODO*
+*@TODO* 详细讲解。
 
 ## 附录：易错类型讲解
 

@@ -13,10 +13,12 @@
 **注解**（Annotation）是 JDK 5.0 开始引入的新技术。
 
 Annotation 的作用：
+
 1. 注解不是程序，但可以对程序做出解释，功能与注释类似
 2. 可以被其他程序读取
 
 Annotation 的格式：
+
 - 注解的基本格式为 `@annotation_name`
 - 有的注解还可以添加参数，例如下面的代码
 
@@ -30,6 +32,7 @@ class A {
 ```
 
 Annotation 在哪里使用？
+
 - `package`
 - `class`
 - `method`
@@ -73,13 +76,14 @@ public void destroy() {
 ### 1.2 内置注解
 
 内置注解有下面几个：
+
 - `@Override`：定义在 `java.lang.Override` 中，此注解只适用于修饰方法，表示一个方法重写父类的另一个方法
 - `@Deprecated`：定义在 `java.lang.Deprecated` 中，此注释用于修饰方法、属性、类，表示不鼓励程序员使用这样的元素，通常是因为危险或存在更好的选择
 - `@SuppressWarnings`：定义在 `java.lang.SuppressWarnings` 中，用来抑制编译时的警告信息
-    - `@SuppressWarnings("all")` 抑制全部警告
-    - `@SuppressWarnings("unchecked")` 未检查的
-    - `@SuppressWarnings(value={"unchecked", "deprecation"})` 可以选择多个
-    - ……
+  - `@SuppressWarnings("all")` 抑制全部警告
+  - `@SuppressWarnings("unchecked")` 未检查的
+  - `@SuppressWarnings(value={"unchecked", "deprecation"})` 可以选择多个
+  - ……
 
 如果我们想重写 `toString()` 方法，但是不小心将方法写成 `tostring()`，如果此时有 `@Override` 注解，这个时候程序会报错。也就是说，重写注解会帮助我们检查程序是否是真的重写了这个方法。
 
@@ -98,11 +102,12 @@ public @interface SuppressWarnings {
 元注解负责解释其他注解，Java 定义了 4 个标准的 meta-annotation 类型，它们被用来提供对其他 `annotation` 类型作说明。
 
 这些类型和它们所支持的类在 `java.lang.annotation` 包中可以找到：
+
 - `@Target`：用于表述注解的使用范围
 - `@Retention`：表示需要在什么级别保存该注释信息，用于描述注解的生命周期，可选值：
-    - `SOURCE`
-    - `CLASS`
-    - `RUNTIME`
+  - `SOURCE`
+  - `CLASS`
+  - `RUNTIME`
 - `@Documented`：说明该注解将被包含在 javadoc 中
 - `@Inherited`：说明子类可以继承父类中的该注解
 
@@ -142,6 +147,7 @@ public class Test {
 ### 1.4 自定义注解
 
 使用 `@interface` 自定义注解时，自动继承了 `java.lang.annotation.Annotation` 接口：
+
 - `@interface` 用来声明一个注解，格式为 `public @interface AnnotationName { ... }`
 - 其中的每一个方法实际上是声明了一个配置参数，方法的名称就是参数的名称
 - 返回值类型就是参数的类型，而且只能是基本类型，例如 `Class`、`String`、`enum`
@@ -187,6 +193,7 @@ public class Test {
 ### 2.1 反射机制概述
 
 **动态语言** 可以在运行时改变其结构的语言，主要的动态语言：
+
 - Objective-C
 - C#
 - JavaScript
@@ -194,6 +201,7 @@ public class Test {
 - Python
 
 **静态语言** 在运行时不能改变其结构：
+
 - Java
 - C/C++
 
@@ -208,20 +216,24 @@ Class c = Class.forName("java.lang.String");
 加载完类之后，在堆内存的方法区中就产生了一个 `Class` 类型的对象（一个类只有一个 `Class` 对象），这个对象就包含了完整的类的结构信息。我们可以通过这个对象看到类的结构，这个对象就像一面镜子，透过镜子看到类的结构，所以我们形象地称之为 **反射**。
 
 正常的创建对象方式：
+
 1. 引入需要的 *包类* 名称
 2. 通过 `new` 实例化
 3. 取得实例化对象
 
 反射方式：
+
 1. 实例化对象
 2. `getClass()` 方法调用获得类对象
 3. 得到完整的 *包类* 名称
 
 Java 反射的优点和缺点：
+
 - 优点：可以实现动态创建对象和编译，体现出很大的灵活性
 - 缺点：对性能有影响，反射基本上解释操作，这些操作总是慢于直接执行相同的操作
 
 反射相关的主要的 API：
+
 - `java.lang.Class`：代表一个类
 - `java.lang.reflect.Method`：代表类的方法
 - `java.lang.reflect.Field`：代表类的成员变量
@@ -317,11 +329,13 @@ class Object {
 ### 2.2 理解 `Class` 类并获取 `Class` 实例
 
 对象反射可以得到的信息：
+
 - 某个类的属性
 - 某个类的方法
 - 某个类实现了哪些接口
 
 对于每个类而言，JRE 都为其保留了一个不变的 `Class` 类型的对象，一个 `Class` 对象包含了特定某个结构（类、接口、数组类或 `void`）的有关的信息:
+
 - `Class` 本身也是一个类
 - `Class` 对象只能由系统建立对象
 - 一个加载的类在 JVM 中只有一个 `Class` 实例
@@ -345,20 +359,27 @@ class Object {
 | `Field[] getDeclaredFields()`               | 返回 `Field` 对象的一个数组                                        |
 
 获取 `Class` 类的实例有几种方法：
-1.  若已知具体的类，可以直接通过 `.class` 属性获取，这种方法最可靠且最快  
+
+1. 若已知具体的类，可以直接通过 `.class` 属性获取，这种方法最可靠且最快  
+
     ```java
     Class cls = Person.class;
     ```
-2.  若已知某个类的实例，可以使用 `.getClass()` 属性获取  
+
+2. 若已知某个类的实例，可以使用 `.getClass()` 属性获取  
+
     ```java
     Class cls = person.getClass();
     ```
-3.  已知一个类的全名，且该类在类路径下，可以通过 `Class.forName()` 获取，可能抛出 `ClassNotFoundException`  
+
+3. 已知一个类的全名，且该类在类路径下，可以通过 `Class.forName()` 获取，可能抛出 `ClassNotFoundException`  
+
     ```java
     Class cls = Class.forName("top.alexsun.Person");
     ```
-4.  内置的基本数据类型可以使用 `.Type` 属性
-5.  可以使用 `ClassLoader` 获取
+
+4. 内置的基本数据类型可以使用 `.Type` 属性
+5. 可以使用 `ClassLoader` 获取
 
 这是我们的几个类：
 
@@ -417,6 +438,7 @@ class Test {
 ```
 
 有哪些类型可以获得 `Class` 对象？
+
 - `class`：外部类，成员（成员内部类，静态内部类），局部内部类，匿名内部类
 - `interface`：接口
 - `[]`：数组
@@ -455,31 +477,33 @@ class Test {
 下面是 Java 的内存分析。
 
 - Java 内存
-    - 堆
-        - 存放 `new` 的对象和数组
-        - 可以被所有的线程共享，不会存放别的对象的引用
-    - 栈
-        - 存放基本变量类型（会包含这个基本类型的具体数值）
-        - 引用对象的变量（会存放这个引用在堆里面的具体地址）
-    - 方法区
-        - 可以被所有的线程共享
-        - 包含了所有的 `class` 和 `static` 变量
+  - 堆
+    - 存放 `new` 的对象和数组
+    - 可以被所有的线程共享，不会存放别的对象的引用
+  - 栈
+    - 存放基本变量类型（会包含这个基本类型的具体数值）
+    - 引用对象的变量（会存放这个引用在堆里面的具体地址）
+  - 方法区
+    - 可以被所有的线程共享
+    - 包含了所有的 `class` 和 `static` 变量
 
 类的加载过程：当程序主动使用某个类时，如果该类还没有加载到内存中，则系统会通过如下三个步骤来对该类进行初始化：
+
 1. 类的 **加载**（Load）：将 `.class` 文件读入内存，并创建 `java.lang.Class` 对象，此过程由类加载器完成
 2. 类的 **链接**（Link）：将类的二进制数据合并到 JRE 中
 3. 类的 **初始化**（Initialize）：JVM 负责对类进行初始化
 
 类的加载与 `ClassLoader` 的理解：
+
 - **加载**：将 `.class` 字节码内容加载到内存中，并将这些静态数据转换成方法区的运行时数据结构，然后生成一个代表这个类的 `java.lang.Class` 对象
 - **链接**：将 Java 类的二进制代码合并到 JVM 的运行状态之中
-    - 验证：确保加载的类信息符合 JVM 规范，没有安全方面的问题
-    - 准备：正式成为类变量（`static`）分配内存并设置类变量默认初始值的阶段，这些内存都将在方法区进行分配
-    - 解析：虚拟机常量池内的符号引用（常量名）替换为直接引用（地址）的过程
+  - 验证：确保加载的类信息符合 JVM 规范，没有安全方面的问题
+  - 准备：正式成为类变量（`static`）分配内存并设置类变量默认初始值的阶段，这些内存都将在方法区进行分配
+  - 解析：虚拟机常量池内的符号引用（常量名）替换为直接引用（地址）的过程
 - **初始化**：
-    - 执行类构造器 `<clinit>()` 方法的过程。类构造器 `<clinit>()` 方法是由编译期自动收集类中所有类变量的赋值动作和静态代码块中的语句合并产生的（类构造器是构造类的信息的，不是构造该类对象的构造器）
-    - 当初始化一个类的时候，如果发现其父类还没有进行初始化，则需要先出发其父类的初始化
-    - 虚拟机会保证一个类的 `<clinit>>()` 方法在多线程环境中被正确加锁和同步
+  - 执行类构造器 `<clinit>()` 方法的过程。类构造器 `<clinit>()` 方法是由编译期自动收集类中所有类变量的赋值动作和静态代码块中的语句合并产生的（类构造器是构造类的信息的，不是构造该类对象的构造器）
+  - 当初始化一个类的时候，如果发现其父类还没有进行初始化，则需要先出发其父类的初始化
+  - 虚拟机会保证一个类的 `<clinit>>()` 方法在多线程环境中被正确加锁和同步
 
 下面给出示例代码：
 
@@ -506,16 +530,18 @@ class A {
 
 结果是：
 
-```log
+```text
 A 类的静态代码块初始化
 A 类的无参构造初始化
 100
 ```
 
 过程：
-1.  加载到内存，产生一个类对应的 `Class` 对象
-2.  链接，结束后 `m = 0`
-3.  初始化方法  
+
+1. 加载到内存，产生一个类对应的 `Class` 对象
+2. 链接，结束后 `m = 0`
+3. 初始化方法  
+
     ```java
     <clinit>() {
         System.out.println("A类的静态代码块初始化");
@@ -527,16 +553,17 @@ A 类的无参构造初始化
 ### 2.4 分析类的初始化
 
 什么时候会发生类的初始化？
+
 - 类的主动引用时，一定会发生类的初始化
-    - 当虚拟机启动，先初始化 `main()` 方法所在的类
-    - `new` 一个类的对象
-    - 调用类的静态成员（除了 `final` 常量）和静态方法
-    - 使用 `java.lang.reflect` 包方法对类进行反射调用
-    - 当初始化一个类，如果父类没有被初始化，则会先初始化它的父类
+  - 当虚拟机启动，先初始化 `main()` 方法所在的类
+  - `new` 一个类的对象
+  - 调用类的静态成员（除了 `final` 常量）和静态方法
+  - 使用 `java.lang.reflect` 包方法对类进行反射调用
+  - 当初始化一个类，如果父类没有被初始化，则会先初始化它的父类
 - 类的被动引用，**不会** 发生类的初始化
-    - 当访问一个静态域时，只有真正声明这个域的类才会被初始化，例如：当通过子类引用父类的静态变量，不会导致子类初始化
-    - 通过数组定义类的引用，不会出发此类的初始化
-    - 引用常量不会触发此类的初始化，因为常量在链接阶段就存入调用库的常量池中了
+  - 当访问一个静态域时，只有真正声明这个域的类才会被初始化，例如：当通过子类引用父类的静态变量，不会导致子类初始化
+  - 通过数组定义类的引用，不会出发此类的初始化
+  - 引用常量不会触发此类的初始化，因为常量在链接阶段就存入调用库的常量池中了
 
 下面是示例代码：
 
@@ -569,6 +596,7 @@ class Son extends Father {
 ```
 
 几个现象可以通过上面的原理解释：
+
 - 调用 `Son.b` 不会加载 `Son` 类
 - `Son[] array = new Son[5];` 不会加载任何类
 - 调用 `Son.M` 不会加载任何类
@@ -576,27 +604,32 @@ class Son extends Father {
 ### 2.5 类加载器
 
 类加载器的作用：
+
 - 类加载的作用：将 `.class` 字节码文件的内容加载的内存中，并将这些静态数据转换成方法区的运行时数据结构，然后在堆中生成一个代表这个类的 `java.lang.Class` 对象，作为方法区中的类数据的访问入口
 - 类缓存：标准的 JavaSE 类加载器可以按要求查找类，但一旦某个类被加载到类加载器中，它将维持加载（缓存）一段时间，JVM 垃圾回收机制可以回收这些 `Class` 对象
 
 执行过程：
+
 1. 源程序 `.java` 文件通过 Java 编译器生成 `.class` 字节码文件
 2. 类装载器装载字节码文件
 3. 字节码校验器验证字节码
 4. 解释器解释字节码内容到操作系统上
 
 类加载器的作用是把类装载进内存，JVM 规范定义了如下类型的加载器：
+
 - **引导类加载器**：用 C++ 编写的，是 JVM 自带的类加载器，负责 Java 平台核心库，用来装载核心类库，该加载器无法直接获取
 - **扩展类加载器**：负责 `jre/lib/ext` 目录下的 `.jar` 包或者 `-D java.ext.dirs` 指定目录下的 `.jar` 包装入工作库
 - **系统类加载器**：负责 `java -classpath` 或 `-D java.class.path` 所指定的目录下的类与 `.jar` 包装入工作，是最常用的类加载器
 
 它们的顺序是：
+
 1. 引导类加载器（Bootstrap ClassLoader）
 2. 扩展类加载器（Extension ClassLoader）
 3. 系统类加载器（System ClassLoader）
 4. 自定义类加载器
 
 行为：
+
 - 自底向上检查类是否已经被装载
 - 自顶向下尝试加载类
 
@@ -646,6 +679,7 @@ Java 的双亲委派机制：当某个类加载器需要加载某个 `.class` �
 :::
 
 `java.lang.ClassLoader.loadClass()` 方法：
+
 1. `Class<?> c = findLoadedClass(name);`，首先判断该类是否已经被加载
 2. 如果没有，判断父类是否为空
     - 非空则调用 `parent.loadClass(name, false);`
@@ -709,6 +743,7 @@ Constructor constructor = c1.getDeclaredConstructor(String.class, int.class, int
 ```
 
 总结：
+
 - 在实际操作中，获得类的信息的操作代码，并不会经常开发
 - 一定要熟悉 `java.lang.reflect` 包的作用，反射机制
 - 如何取得属性、方法、构造器名称、修饰符等
@@ -716,10 +751,12 @@ Constructor constructor = c1.getDeclaredConstructor(String.class, int.class, int
 ### 2.7 动态创建对象执行方法
 
 通过反射创建对象，可以使用 `c.newInstance()` 方法，但必须满足：
+
 1. 类必须有一个无参构造器
 2. 类的构造器的访问权限需要足够
 
 如果类没有无参构造器，那么可以通过下面的方法获得构造器：
+
 1. 通过 `Class` 类的 `getDeclaredConstructor(Class... parameterTypes)` 取得本类的指定形参类型的构造器
 2. 向构造器的形参中传递一个对象数组进去，里面包含了构造器所需的各个参数
 3. 通过 `Constructor` 实例化对象
@@ -760,21 +797,24 @@ System.out.println(user.getName());
 总结：调用指定方法：
 
 - 方法原型：  
+
     ```java
     Object method.invoke(Object obj, Object... args);
     ```
+
 - `Object` 对应原方法的返回值，若没有返回值返回 `null`
 - 若原方法为静态方法，`obj` 可以传 `null`
 - 若原方法没有参数，可以传 `null`
 - 若原方法为 `private`，在调用 `invoke()` 方法之前需要关闭权限检查
 
 `setAccessible()` 方法：
+
 - `Method`、`Field`、`Constructor` 对象都有 `setAccessible()` 方法
 - `setAccessible()` 方法的作用是启用和禁用访问安全检查
 - `setAccessible(true)` 为关闭安全检查
 - 关闭安全检查的作用
-    - 使得原本私有的属性和方法也可以被访问
-    - 提供反射的执行效率
+  - 使得原本私有的属性和方法也可以被访问
+  - 提供反射的执行效率
 
 ### 2.8 性能对比分析
 
@@ -832,7 +872,7 @@ public class Test {
 
 输出：
 
-```log
+```text
 花费时间: 9ms
 花费时间: 5699ms
 花费时间: 1959ms
@@ -841,12 +881,13 @@ public class Test {
 ### 2.9 获取泛型信息
 
 反射操作泛型：
+
 - Java 采用泛型擦除机制来引入泛型，Java 中的泛型仅仅是给编译器 `javac` 使用的，确保数据的安全性和免去强制类型转换问题，但是一旦编译完成，所有和泛型有关的类型全部擦除
 - 为了通过反射操作这些类型，Java 新增了 `ParameterizedType`、`GenericArrayType`、`TypeVariable` 和 `WildcardType` 几种类型来代表不能被归一到 `Class` 类中的类型但是又和原始类型齐名的类型
-    - `ParameterizedType`：表示一种参数化类型，比如 `Collection<String>`
-    - `GenericArrayType`：表示一种元素类型是参数化类型或者类型变量的数组类型
-    - `TypeVariable`：是各种类型变量的公共父接口
-    - `WildcardType`：代表一种通配符类型表达式
+  - `ParameterizedType`：表示一种参数化类型，比如 `Collection<String>`
+  - `GenericArrayType`：表示一种元素类型是参数化类型或者类型变量的数组类型
+  - `TypeVariable`：是各种类型变量的公共父接口
+  - `WildcardType`：代表一种通配符类型表达式
 
 ```java
 public class Test {
@@ -888,7 +929,7 @@ public class Test {
 
 输出结果：
 
-```log
+```text
 ## java.util.Map<java.lang.String, top.alexsun.User>
 class java.lang.String
 class top.alexsun.User

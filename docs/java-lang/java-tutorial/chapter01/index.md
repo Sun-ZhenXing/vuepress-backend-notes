@@ -68,6 +68,7 @@ Java 的特性和优势：
 ## 1.3 发行版本
 
 几个概念：
+
 - JDK：Java Development Kit
 - JRE：Java Runtime Environment
 - JVM：Java Virtual Machine
@@ -76,79 +77,80 @@ Java 语言：
 
 - Java 语言
 - 工具和 APIs
-    - java
-    - javac
-    - javadoc
-    - apt
-    - jar
-    - javap
-    - JPDA
-    - JConsole
-    - Java VisualVM
-    - Security
-    - Int'I
-    - RMI
-    - IDL
-    - Deploy
-    - Monitoring
-    - Troubleshoot
-    - Scripting
-    - JVM TI
+  - java
+  - javac
+  - javadoc
+  - apt
+  - jar
+  - javap
+  - JPDA
+  - JConsole
+  - Java VisualVM
+  - Security
+  - Int'I
+  - RMI
+  - IDL
+  - Deploy
+  - Monitoring
+  - Troubleshoot
+  - Scripting
+  - JVM TI
 - RIAs
-    - Java Web Start
-    - Applet / Java Plug-in
+  - Java Web Start
+  - Applet / Java Plug-in
 - 用户界面工具包
-    - AWT
-        - Accessibility
-        - Drag n Drop
-    - Swing
-        - Input Methods
-        - Image I/O
-    - Java 2D
-        - Print Service
-        - Sound
+  - AWT
+    - Accessibility
+    - Drag n Drop
+  - Swing
+    - Input Methods
+    - Image I/O
+  - Java 2D
+    - Print Service
+    - Sound
 - 集成库
-    - IDL
-    - JDBC
-    - JNDI
-    - RMI
-    - RMI-IIOP
-    - Scripting
+  - IDL
+  - JDBC
+  - JNDI
+  - RMI
+  - RMI-IIOP
+  - Scripting
 - 其他基准库
-    - Beans
-    - Intl Support
-    - I/O
-    - JMX
-    - JNI
-    - Math
-    - Networking
-    - Override Mechanism
-    - Security
-    - Serialization
-    - Extension Mechanism
-    - XML JAXP
+  - Beans
+  - Intl Support
+  - I/O
+  - JMX
+  - JNI
+  - Math
+  - Networking
+  - Override Mechanism
+  - Security
+  - Serialization
+  - Extension Mechanism
+  - XML JAXP
 - 语言和工具标准库
-    - lang & util
-    - Collections
-    - Concurrency Utilities
-    - Jar
-    - Logging
-    - Management
-    - Preferences API
-    - Ref Objects
-    - Reflection
-    - Regular Expression
-    - Versioning
-    - Zip
-    - Instrumentation
+  - lang & util
+  - Collections
+  - Concurrency Utilities
+  - Jar
+  - Logging
+  - Management
+  - Preferences API
+  - Ref Objects
+  - Reflection
+  - Regular Expression
+  - Versioning
+  - Zip
+  - Instrumentation
 - JVM
-    - Java Hotspot Client ans Server VM
+  - Java Hotspot Client ans Server VM
 
 *@TODO* 插入图片
 
 ## 1.4 安装开发环境
 
 这里使用的环境为：
+
 - Java 1.8+
 - IntelliJ IDEA
 
