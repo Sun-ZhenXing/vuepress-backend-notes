@@ -1,1 +1,0 @@
-import{_ as a,r as t,o as s,c as n,a as c,b as e,d as r}from"./app-ae09ede6.js";const d={},_=e("h1",{id:"阿里云-oss",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#阿里云-oss","aria-hidden":"true"},"#"),r(" 阿里云 OSS")],-1);function l(i,h){const o=t("AutoCatalog");return s(),n("div",null,[_,c(o)])}const m=a(d,[["render",l],["__file","index.html.vue"]]);export{m as default};
