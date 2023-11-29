@@ -22,18 +22,13 @@
 拉取镜像：
 
 ```bash
-docker pull nginx:1.24.0-alpine3.17-slim
+docker pull nginx:1.25.3-alpine3.18-slim
 ```
 
 示例 `Dockerfile` 文件：
 
 ```dockerfile
-FROM nginx:1.24.0-alpine3.17-slim
-
-ENV TZ=Asia/Shanghai \
-    LANG=C.UTF-8 \
-    LANGUAGE=C.UTF-8 \
-    LC_ALL=C.UTF-8
+FROM nginx:1.25.3-alpine3.18-slim
 
 WORKDIR /usr/share/nginx/html/docs/
 
