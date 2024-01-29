@@ -1,1 +1,0 @@
-import{_ as t,r as n,o,c,a as r,b as e,d as s}from"./app-0dJ2_MxH.js";const d={},_=e("h1",{id:"nginx",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#nginx","aria-hidden":"true"},"#"),s(" Nginx")],-1);function i(l,x){const a=n("AutoCatalog");return o(),c("div",null,[_,r(a)])}const f=t(d,[["render",i],["__file","index.html.vue"]]);export{f as default};

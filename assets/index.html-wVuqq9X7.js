@@ -1,0 +1,1 @@
+import{_ as a,r as t,o as s,c as n,a as c,b as e}from"./app-uNb852KP.js";const r={},_=e("h1",{id:"阿里云-oss",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#阿里云-oss"},[e("span",null,"阿里云 OSS")])],-1);function l(d,i){const o=t("AutoCatalog");return s(),n("div",null,[_,c(o)])}const h=a(r,[["render",l],["__file","index.html.vue"]]);export{h as default};
