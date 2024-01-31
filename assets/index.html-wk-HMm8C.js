@@ -1,0 +1,1 @@
+import{_ as n,r as o,o as a,c as s,a as r,b as e}from"./app-ju10JTa9.js";const c={},_=e("h1",{id:"kubernetes",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#kubernetes"},[e("span",null,"Kubernetes")])],-1);function l(d,u){const t=o("AutoCatalog");return a(),s("div",null,[_,r(t)])}const f=n(c,[["render",l],["__file","index.html.vue"]]);export{f as default};

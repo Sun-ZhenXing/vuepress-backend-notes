@@ -1,0 +1,1 @@
+import{_ as o,r as t,o as n,c,a as s,b as e}from"./app-ju10JTa9.js";const r={},_=e("h1",{id:"java-语言",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#java-语言"},[e("span",null,"Java 语言")])],-1);function l(d,i){const a=t("AutoCatalog");return n(),c("div",null,[_,s(a)])}const h=o(r,[["render",l],["__file","index.html.vue"]]);export{h as default};

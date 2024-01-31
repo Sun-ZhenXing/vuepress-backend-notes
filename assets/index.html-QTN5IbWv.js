@@ -1,0 +1,1 @@
+import{_ as a,r as t,o as n,c,a as r,b as e}from"./app-ju10JTa9.js";const s={},_=e("h1",{id:"frp-反向代理",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#frp-反向代理"},[e("span",null,"FRP 反向代理")])],-1);function l(d,f){const o=t("AutoCatalog");return n(),c("div",null,[_,r(o)])}const p=a(s,[["render",l],["__file","index.html.vue"]]);export{p as default};
