@@ -1,38 +1,63 @@
 {
   "name": "vuepress-backend-notes",
+  "type": "module",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.1.0",
   "description": "Vuepress Backend Notes",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "clean-dev": "vuepress dev docs --clean-cache",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Alex",
+  "license": "ISC",
   "keywords": [
     "vuepress",
     "backend",
     "notes"
   ],
-  "author": "Alex",
-  "license": "ISC",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "clean-dev": "vuepress dev src --clean-cache",
+    "postinstall": "simple-git-hooks",
+    "docs:dev": "vuepress dev src",
+    "docs:build": "vuepress build src",
+    "docs:clean-dev": "vuepress dev src --clean-cache",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.2",
-    "@vuepress/client": "2.0.0-rc.2",
-    "@vuepress/plugin-shiki": "2.0.0-rc.0",
-    "@vuepress/theme-default": "2.0.0-rc.2",
-    "@vuepress/utils": "2.0.0-rc.2",
+    "@algolia/client-search": "^4.23.3",
+    "@antfu/eslint-config": "^2.16.1",
+    "@eslint/eslintrc": "^3.0.2",
+    "@iconify/vue": "^4.1.2",
+    "@types/node": "^20.12.8",
+    "@vuepress/bundler-vite": "2.0.0-rc.9",
+    "@vuepress/plugin-shiki": "2.0.0-rc.25",
+    "echarts": "^5.5.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-markdownlint": "^0.5.0",
+    "eslint-plugin-perfectionist": "^2.10.0",
+    "flowchart.ts": "^3.0.0",
     "github-slugger": "^2.0.0",
-    "katex": "^0.16.9",
-    "mermaid": "^10.7.0",
-    "vue": "^3.4.15",
-    "vuepress": "2.0.0-rc.2",
-    "vuepress-plugin-auto-catalog": "2.0.0-rc.16",
-    "vuepress-plugin-copy-code2": "2.0.0-rc.16",
-    "vuepress-plugin-md-enhance": "2.0.0-rc.16",
-    "vuepress-plugin-search-pro": "2.0.0-rc.16"
+    "katex": "^0.16.10",
+    "lint-staged": "^15.2.2",
+    "markmap-lib": "^0.17.0",
+    "markmap-toolbar": "^0.17.0",
+    "markmap-view": "^0.17.0",
+    "mermaid": "^10.9.0",
+    "reveal.js": "^5.1.0",
+    "simple-git-hooks": "^2.11.1",
+    "vue": "^3.4.26",
+    "vuepress": "2.0.0-rc.9",
+    "vuepress-plugin-search-pro": "2.0.0-rc.38",
+    "vuepress-theme-hope": "2.0.0-rc.38"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "pnpm lint:fix"
   }
 }
