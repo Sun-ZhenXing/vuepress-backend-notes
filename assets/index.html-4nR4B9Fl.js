@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-245b6914","path":"/tools/k8s/","title":"Kubernetes","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1706507402000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":1}]},"filePathRelative":"tools/k8s/index.md","excerpt":""}');export{e as data};

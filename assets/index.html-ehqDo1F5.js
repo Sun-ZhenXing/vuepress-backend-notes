@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-1d149624","path":"/tools/graalvm/","title":"GraalVM","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1706507402000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":1}]},"filePathRelative":"tools/graalvm/index.md","excerpt":""}');export{t as data};

@@ -1,1 +1,0 @@
-const a=JSON.parse('{"key":"v-645e184f","path":"/java-lang/","title":"Java 语言","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1680351427000,"contributors":[{"name":"Sun-ZhenXing","email":"1006925066@qq.com","commits":2}]},"filePathRelative":"java-lang/index.md","excerpt":""}');export{a as data};
