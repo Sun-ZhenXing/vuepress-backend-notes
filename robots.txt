@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://blog.alexsun.top/vuepress-frontend-notes/vuepress-frontend-notes/sitemap.xml
+Sitemap: https://blog.alexsun.top/vuepress-backend-notes/vuepress-backend-notes/sitemap.xml
