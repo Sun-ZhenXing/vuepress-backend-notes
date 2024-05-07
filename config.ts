@@ -4,7 +4,7 @@ export const config = {
   /**
    * 项目基础路径
    */
-  base: '/vuepress-frontend-notes/',
+  base: '/vuepress-backend-notes/',
   /**
    * 项目标题
    */
@@ -27,9 +27,9 @@ export const config = {
   /**
    * 项目主页
    */
-  hostname: 'https://blog.alexsun.top/vuepress-frontend-notes/',
+  hostname: 'https://blog.alexsun.top/vuepress-backend-notes/',
   /**
    * 仓库地址
    */
-  repo: 'Sun-ZhenXing/vuepress-frontend-notes',
+  repo: 'Sun-ZhenXing/vuepress-backend-notes',
 }
